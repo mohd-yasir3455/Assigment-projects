@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediMart Email Server</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Node.js Email Server</p>
+          <h1>Send confirmation emails from a simple HTTP server</h1>
+          <p>
+            This project demonstrates Node basics, static file serving, request
+            logging, and email delivery through a single server.
+          </p>
+        </div>
+      </header>
+
+      <section class="content-grid">
+        <div class="card">
+          <h2>Send Email</h2>
+          <form id="emailForm">
+            <label>
+              Name
+              <input id="name" type="text" placeholder="Your name" required />
+            </label>
+            <label>
+              Email
+              <input id="email" type="email" placeholder="recipient@example.com" required />
+            </label>
+            <label>
+              Subject
+              <input id="subject" type="text" placeholder="Order confirmation" required />
+            </label>
+            <label>
+              Message
+              <textarea id="message" rows="5" placeholder="Write your message here" required></textarea>
+            </label>
+            <button class="button primary" type="submit">Send Email</button>
+          </form>
+          <div id="feedback" class="feedback"></div>
+        </div>
+
+        <div class="info-panel">
+          <h2>How it works</h2>
+          <ul>
+            <li>Static pages are served with Node's built-in `http` module.</li>
+            <li>Requests are logged with timestamps in the terminal.</li>
+            <li>Form submissions are sent to `/send` using `fetch`.</li>
+            <li>Emails are delivered using `nodemailer`.</li>
+          </ul>
+
+        </div>
+      </section>
+    </div>
+    <script src="/script.js"></script>
+  </body>
+</html>
